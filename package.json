@@ -10,9 +10,14 @@
     "start": "node dist",
     "lint": "yarn run eslint . --ext .js,.jsx,.ts,.tsx",
     "build": "yarn run lint && tsc -p .",
-    "build:start": "yarn run build && yarn run start"
+    "build:start": "yarn run build && yarn run start",
+    "clean": "rimraf dist"
   },
   "dependencies": {
+    "@discordjs/builders": "^0.9.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "commander": "^8.3.0",
+    "discord-api-types": "^0.25.2",
     "discord.js": "^13.3.1",
     "dotenv": "^10.0.0",
     "winston": "^3.3.3"

@@ -1,5 +1,5 @@
 import Client from "../Client";
-import { BaseEvent } from "./BaseEvent";
+import BaseEvent from "../BaseEvent";
 
 export default class UserEvent extends BaseEvent {
   constructor(client: Client) {
@@ -10,6 +10,6 @@ export default class UserEvent extends BaseEvent {
   }
 
   run(msg: string): void {
-    this.client.logger.error(`[Discord]: ${msg}`);
+    this.client.logger.error(`[Client]: ${msg}`);
   }
 }
