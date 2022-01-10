@@ -21,7 +21,7 @@ export default abstract class BaseEvent {
   abstract run(...args: any[]): any;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
+// eslint-disable-next-line no-redeclare
 declare namespace BaseEvent {
   export interface Options {
     name: string;

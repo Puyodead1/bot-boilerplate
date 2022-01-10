@@ -39,6 +39,7 @@ export default class Client extends Discord.Client {
           __dirname,
           "events",
           file
+          // eslint-disable-next-line new-cap
         )).default)(this);
 
         // add the event to the map
@@ -87,6 +88,7 @@ export default class Client extends Discord.Client {
             "commands",
             category,
             file
+            // eslint-disable-next-line new-cap
           )).default)(this);
 
           // add the command to the map

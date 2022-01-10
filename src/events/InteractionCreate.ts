@@ -13,6 +13,11 @@ export default class UserEvent extends BaseEvent {
   public async run(interaction: CommandInteraction) {
     if (!interaction.isCommand()) return;
 
+    if (!interaction.member)
+      return interaction.reply({
+        content: "Failed to get member",
+      });
+
     const command = this.client.commands.get(interaction.commandName);
     if (!command) return;
 
@@ -25,7 +30,7 @@ export default class UserEvent extends BaseEvent {
       this.client.logger.error(
         `[InteractionCreateEvent] Failed to run command ${command.data.name}: ${e}`
       );
-      await interaction.reply({
+      await interaction.followUp({
         content: "There was an error while executing this command!",
         ephemeral: true,
       });

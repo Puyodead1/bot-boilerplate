@@ -9,7 +9,8 @@ export default class UserCommand extends BaseCommand {
       client,
       new SlashCommandBuilder()
         .setName("ping")
-        .setDescription("Get the bots ping")
+        .setDescription("Get the bots ping"),
+      __filename
     );
   }
 

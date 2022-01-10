@@ -1,6 +1,6 @@
 import Winston from "winston";
 import { REST } from "@discordjs/rest";
-import { Routes } from "discord.js/node_modules/discord-api-types";
+import { Routes } from "discord-api-types/v9";
 import fs from "fs";
 import path from "path";
 import BaseCommand from "./BaseCommand";
@@ -25,6 +25,7 @@ const loadCommands = (logger: Winston.Logger) => {
           "commands",
           category,
           file
+          // eslint-disable-next-line new-cap
         )).default)(this);
 
         // add the command to the map
@@ -33,9 +34,8 @@ const loadCommands = (logger: Winston.Logger) => {
         logger.error(`Failed to load command ${file}: ${e}`);
       }
     }
-
-    return commands;
   }
+  return commands;
 };
 
 export const deployCommands = (
